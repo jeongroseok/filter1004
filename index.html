@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Filter 1004</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+</head>
+
+<body>
+    <div class="w3-content" style="height: 40px">
+        <div class="w3-right">
+            <ul class="w3-navbar w3-small w3-text-gray">
+                <li><a>로그인</a></li>
+                <li><a>회원가입</a></li>
+                <li><a>장바구니</a></li>
+                <li><a>주문조회</a></li>
+            </ul>
+        </div>
+    </div>
+    <header>
+        <div class="w3-content w3-center">
+            <img class="w3-margin" style="height: 65px" src="images/logo.png" alt="Filter 1004">
+</div>
+</header>
+<!-- Navigation -->
+<nav class="w3-black">
+    <ul class="w3-navbar w3-content">
+        <li><a class="w3-gray" href="#">정수기 필터</a></li>
+        <li><a href="#">이온수기 필터</a></li>
+        <li><a href="#">기타 부품</a></li>
+        <li><a href="#">제품명으로 찾기</a></li>
+        <li class="w3-right"><button class="w3-btn w3-black">검색</button></li>
+        <li class="w3-right"><input type="text" class="w3-input" placeholder="찾기.."></li>
+    </ul>
+</nav>
+<!-- Main Banner -->
+<div class="w3-light-gray">
+    <div class="w3-content w3-red">
+        <img class="w3-image" src="images/main-banner.png" alt="">
+    </div>
+</div>
+<article class="w3-content" />
+<h1>Best Products</h1>
+<div>
+    <a id="list-item" href="#" class="w3-padding-small w3-col s6 m3 l3">
+
+        <img class="w3-image" src="images/product0.jpg" alt="product">
+
+        <footer class="w3-center w3-padding w3-container w3-small">
+            <div>3M언더싱크 USF-C정수기</div>
+            <!--<div><span class="w3-tag w3-margin-left w3-red">Hot!</span><span class="w3-tag w3-blue">New!</span></div>-->
+            <div><b>55,000</b>원</div>
+        </footer>
+
+    </a>
+</div>
+<div class="w3-center">
+    <ul class="w3-pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li><a class="w3-blue" href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+</div>
+</article>
+
+<script>
+    var section = document.getElementById('list-item');
+    for (var i = 0; i < 10; i++) {
+        section.parentNode.appendChild(section.cloneNode(true));
+    }
+</script>
+</body>
+
+</html>
