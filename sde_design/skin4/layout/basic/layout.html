@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!--PG크로스브라우징필수내용 시작-->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <!--PG크로스브라우징필수내용 끝-->
+
+    <title>Filter 1004</title>
+
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="http://www.w3schools.com/lib/w3.js"></script>
+    <style>
+        .my-product-list a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="w3-light-gray">
+    <!-- Top Navigation -->
+    <div class="w3-border-bottom w3-white">
+        <!-- Logged Off -->
+        <div module="Layout_statelogoff" class="w3-content" style="height: 34px">
+            <div class="w3-right">
+                <ul class="w3-navbar w3-small w3-text-gray">
+                    <li><a href="/member/login.html">로그인</a></li>
+                    <li><a href="/member/join.html">회원가입</a></li>
+                    <li><a href="/order/basket.html">장바구니</a></li>
+                    <li><a href="/myshop/order/list.html">주문조회</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Logged In -->
+        <div module="Layout_stateLogon" class="w3-content" style="height: 34px">
+            <div class="w3-right">
+                <ul class="w3-navbar w3-small w3-text-gray">
+                    <li class="w3-navitem"><strong>{$name}</strong>님 환영합니다.</li>
+                    <li><a href="{$action_logout}">로그아웃</a></li>
+                    <li><a href="/myshop/index.html">내 정보</a></li>
+                    <li><a href="/order/basket.html">장바구니</a></li>
+                    <li><a href="/myshop/order/list.html">주문조회</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="w3-white">
+        <div class="w3-content">
+            <div class="w3-container w3-display-container w3-center w3-text-blue">
+                <div class="w3-display-left w3-hide-small">
+                    <img src="/web/upload/category/editor/2017/02/01/1d34b5d4083e8e0d91d181d484f0fa7c.png" alt="" />
+                </div>
+                <!-- Logo -->
+                <div module="Layout_LogoTop" class="w3-margin">
+                    <a href="/"><img style="height: 65px" src="{$logo}" alt="{$mall_name}" /></a>
+                    <h6>최저가 필터 전문 쇼핑몰</h6>
+                </div>
+                <div class="w3-display-right w3-hide-small">
+                    <i class="w3-text-dark-gray"><h3>Big Seal 50%</h3></i>
+                    <h6>for a proper look</h6>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Navigation -->
+    <nav module="Layout_category" class="w3-blue">
+        <ul class="w3-navbar w3-content w3-hide-small w3-border-left w3-border-right w3-border-light-blue">
+            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
+            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
+            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
+            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
+            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
+            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
+            <li class=" w3-right"><a class="w3-padding-large w3-hover-light-blue" href="#"><i class="fa fa-search"></i></a></li>
+        </ul>
+    </nav>
+    <!-- Main -->
+    <!-- <aside class="w3-collapse w3-sidenav">좌측 메뉴</aside> 테블릿에선 카테고리 메뉴만 보이고 PC에선 좌측 메뉴만 보인다. -->
+    <main class="w3-main">
+        <article class="w3-content">
+            <!--@contents-->
+        </article>
+    </main>
+    <footer module="Layout_footer" class="w3-container w3-black w3-text-gray">
+        <div class="w3-content w3-padding-jumbo w3-small w3-center">
+            <!-- Util Menu -->
+            <div class="w3-container w3-margin">
+                <a href="/">홈</a> | <a href="/shopinfo/company.html">회사소개</a> | <a href="/member/agreement.html">이용약관</a> | <a href="/member/privacy.html">개인정보취급방침</a> | <a href="/shopinfo/guide.html">이용안내</a>
+            </div>
+
+            <p class="w3-margin-0">
+                상호: {$company_name}. 대표자: {$president_name}. 사업자 등록번호: {$company_regno}. 통신판매업신고: {$network_regno}. 전화: {$phone}.
+                <address>{$mall_zipcode} {$mall_addr1} {$mall_addr2}</address>
+            </p>
+            <p class="w3-margin">Copyright © 2017 {$mall_name} All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 참고: 결제를 위한 필수 영역 -->
+    <div id="progressPaybar" style="display:none;">
+        <div id="progressPaybarBackground" class="layerProgress"></div>
+        <div id="progressPaybarView">
+            <div class="box">
+                <p class="graph">
+                    <span><img src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/txt_progress.gif" alt="현재 결제가 진행중입니다." /></span>
+                    <span><img src="//img.echosting.cafe24.com/skin/base/layout/img_loading.gif" alt="" /></span>
+                </p>
+                <p class="txt">
+                    본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을 닫으시면<br /> 주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- //참고 -->
+</body>
+
+</html>

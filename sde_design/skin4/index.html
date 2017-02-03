@@ -1,0 +1,140 @@
+<!--@layout(/layout/basic/main.html)-->
+
+<!-- Slideshow -->
+<div class="w3-display-container">
+    <!-- Slideshow Controllers -->
+    <div class="w3-top w3-display-middle w3-padding" style="width: 100%">
+        <div class="w3-btn w3-left" onclick="slideshow.previous()">&#10094;</div>
+        <div class="w3-btn w3-right" onclick="slideshow.next()">&#10095;</div>
+    </div>
+    <!-- Images -->
+    <img class="slideshow-item w3-animate-left" style="width: 100%" src="/web/upload/category/editor/2017/02/01/1da4e4c057bb0b9d88e4d70a22872e27.png" alt="" />
+    <img class="slideshow-item w3-animate-left" style="width: 100%" src="/web/upload/category/editor/2017/02/01/abebe2b901b44ba54a0b17950e07ad32.png" alt="" />
+    <script>
+        var slideshow = w3.slideshow('.slideshow-item', 7000);
+    </script>
+</div>
+
+<!-- Etc... -->
+<section class="w3-section w3-hide-small w3-hide-medium w3-animate-opacity w3-center">
+    <img class="w3-image" src="/web/upload/category/editor/2017/02/01/97624a45fbd898c5dd2df14e6ecb3f9d.png" alt="" />
+    <img class="w3-image" src="/web/upload/category/editor/2017/02/01/bfa0bf633bdead603994392aca08c439.png" alt="" />
+    <img class="w3-image" src="/web/upload/category/editor/2017/02/01/6a4684e73c343d15317a17f2a735c31c.png" alt="" />
+</section>
+
+<!-- Product List 1 -->
+<section module="product_listmain_1" class="my-product-list w3-section w3-container">
+    <!-- $count = 4 -->
+    <!-- Header -->
+    <header class="w3-container w3-xlarge w3-leftbar w3-border-blue ">
+        {$category_title_text}
+    </header>
+    <!-- List -->
+    <div class="w3-section">
+        <!-- List Item -->
+        <div class="w3-hover-opacity w3-padding-small w3-col s6 m3 l3" id="product-list-item">
+            <a href="{$link_product_detail}"><img class="w3-image" src="{$image_medium}" /></a>
+            <footer class="w3-center w3-padding w3-container w3-small">
+                <a href="{$link_product_detail}">
+                    <div>{$product_name}</div>
+                </a>
+                <a href="{$link_product_detail}">
+                    <!--<div><span class="w3-tag w3-margin-left w3-red">Hot!</span><span class="w3-tag w3-blue">New!</span></div>-->
+                    <b>{$price_unit_head}{$product_price}{$price_unit_tail}</b>
+                </a>
+            </footer>
+        </div>
+        <div class="w3-hover-opacity w3-padding-small w3-col s6 m3 l3" id="product-list-item">
+            <a href="{$link_product_detail}"><img class="w3-image" src="{$image_medium}" /></a>
+            <footer class="w3-center w3-padding w3-container w3-small">
+                <a href="{$link_product_detail}">
+                    <div>{$product_name}</div>
+                </a>
+                <a href="{$link_product_detail}">
+                    <!--<div><span class="w3-tag w3-margin-left w3-red">Hot!</span><span class="w3-tag w3-blue">New!</span></div>-->
+                    <b>{$price_unit_head}{$product_price}{$price_unit_tail}</b>
+                </a>
+            </footer>
+        </div>
+    </div>
+</section>
+
+<!-- Product List 2 -->
+<section module="product_listmain_2" class="my-product-list w3-section w3-container">
+    <!-- $count = 4 -->
+    <!-- Header -->
+    <header class="w3-container w3-xlarge w3-leftbar w3-border-blue ">
+        {$category_title_text}
+    </header>
+    <!-- List -->
+    <div class="w3-panel">
+        <!-- List Item -->
+        <div class="w3-hover-opacity w3-padding-small w3-col s6 m3 l3" id="product-list-item">
+            <a href="{$link_product_detail}"><img class="w3-image" src="{$image_medium}" /></a>
+            <footer class="w3-center w3-padding w3-container w3-small">
+                <a href="{$link_product_detail}">
+                    <div>{$product_name}</div>
+                </a>
+                <a href="{$link_product_detail}">
+                    <!--<div><span class="w3-tag w3-margin-left w3-red">Hot!</span><span class="w3-tag w3-blue">New!</span></div>-->
+                    <b>{$price_unit_head}{$product_price}{$price_unit_tail}</b>
+                </a>
+            </footer>
+        </div>
+        <div class="w3-hover-opacity w3-padding-small w3-col s6 m3 l3" id="product-list-item">
+            <a href="{$link_product_detail}"><img class="w3-image" src="{$image_medium}" /></a>
+            <footer class="w3-center w3-padding w3-container w3-small">
+                <a href="{$link_product_detail}">
+                    <div>{$product_name}</div>
+                </a>
+                <a href="{$link_product_detail}">
+                    <!--<div><span class="w3-tag w3-margin-left w3-red">Hot!</span><span class="w3-tag w3-blue">New!</span></div>-->
+                    <b>{$price_unit_head}{$product_price}{$price_unit_tail}</b>
+                </a>
+            </footer>
+        </div>
+    </div>
+</section>
+
+<!-- 게시판 -->
+<section class="w3-section w3-container" module="board_listpackage_6">
+    <!-- Header -->
+    <header module="board_title_6" class="w3-container w3-xlarge w3-leftbar w3-border-blue ">
+        {$board_title}
+    </header>
+    <table class="w3-table w3-striped w3-bordered w3-hoverable w3-panel">
+        <colgroup>
+            <col style="width: 70px" />
+            <col style="width: auto" />
+            <col style="width: 100px" />
+        </colgroup>
+        <thead class="w3-centered">
+            <tr>
+                <th scope="col">글번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">날짜</th>
+            </tr>
+        </thead>
+        <tbody module="board_list_6">
+            <!--
+                $count = 5
+                $main_list = yes
+                $subject_cut = 25
+                $main_list_reply_view = no
+            -->
+            <tr class="w3-hover-blue">
+                <td><a href="{$link_board_detail}">{$no}</a></td>
+                <td><a href="{$link_board_detail}">{$subject}</a></td>
+                <td>{$write_date|date:Y/m/d}</td>
+            </tr>
+            <tr class="w3-hover-blue">
+                <td><a href="{$link_board_detail}">{$no}</a></td>
+                <td><a href="{$link_board_detail}">{$subject}</a></td>
+                <td>{$write_date|date:Y/m/d}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="w3-btn w3-right" href="/board/free/list.html?board_no=6" class="w3-btn">더 보기</a>
+</section>
+
+<!--@define(cmc_log)-->

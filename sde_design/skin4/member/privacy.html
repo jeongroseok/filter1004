@@ -1,0 +1,18 @@
+<!--@layout(/layout/basic/layout.html)-->
+<section class="my-product-list w3-section w3-container">
+    <header class="w3-container w3-xlarge w3-leftbar w3-border-blue ">
+        개인정보처리방침
+    </header>
+
+    <div module="mall_privacy">
+        <div class="w3-small">
+            <strong class="date {$displayEnforce|display}">{$enforce_date}</strong>
+            <div class="agree">
+                {$privacy_agreement}
+            </div>
+        </div>
+        <div class="w3-btn {$displayBeforeEnforce|display}">
+            <a href="{$before_enforce_link}" class="btnPrev" target="_blank">{$before_enforce_date}</a>
+        </div>
+    </div>
+</section>

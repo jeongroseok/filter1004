@@ -1,0 +1,15 @@
+<!--@layout(/layout/basic/layout.html)-->
+<section class="my-product-list w3-section w3-container">
+    <header class="w3-container w3-xlarge w3-leftbar w3-border-blue ">
+        회사소개
+    </header>
+
+    <div module="mall_company">
+        <div>{$info}</div>
+
+        <div class="{$map_display|display}">
+            <h3>위치</h3>
+            <p>{$map_image}</p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,19 @@
+{
+    "remotePath": "./",
+    "host": "filter1004.cafe24.com",
+    "username": "filter1004",
+    "password": "akehssk77",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ]
+}
