@@ -2,8 +2,6 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -14,24 +12,52 @@
     <!--PG크로스브라우징필수내용 끝-->
 
     <title>Filter 1004</title>
-
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="/js/w3.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="http://www.w3schools.com/lib/w3.js"></script>
+    <link rel="stylesheet" href="/css/w3.css">
     <style>
         .my-product-list a {
             text-decoration: none;
         }
+        
+        .path ol {
+            display: block;
+            padding: 0;
+            font-size: 12px!important;
+            height: 12px;
+        }
+        
+        .path ol li,
+        .path ol {
+            list-style: none;
+        }
+        
+        .path li {
+            float: left;
+        }
+        
+        .path a {
+            text-decoration: none!important;
+        }
+        
+        .path li+li:before {
+            content: '>';
+            padding: 5px;
+        }
+        
+        .path span {
+            display: none;
+        }
     </style>
 </head>
 
-<body class="w3-light-gray">
+<body class="w3-light-gray" style="min-width: 1024">
     <!-- Top Navigation -->
-    <div class="w3-border-bottom w3-white">
+    <div class="w3-border-bottom w3-light-gray">
         <!-- Logged Off -->
         <div module="Layout_statelogoff" class="w3-content" style="height: 34px">
             <div class="w3-right">
-                <ul class="w3-navbar w3-small w3-text-gray">
+                <ul class="w3-navbar w3-small w3-text-gray ">
                     <li><a href="/member/login.html">로그인</a></li>
                     <li><a href="/member/join.html">회원가입</a></li>
                     <li><a href="/order/basket.html">장바구니</a></li>
@@ -56,15 +82,16 @@
     <header class="w3-white">
         <div class="w3-content">
             <div class="w3-container w3-display-container w3-center w3-text-blue">
-                <div class="w3-display-left w3-hide-small">
+                <div class="w3-display-left">
                     <img src="/web/upload/category/editor/2017/02/01/1d34b5d4083e8e0d91d181d484f0fa7c.png" alt="" />
                 </div>
                 <!-- Logo -->
+                <!-- Medium, Large -->
                 <div module="Layout_LogoTop" class="w3-margin">
                     <a href="/"><img style="height: 65px" src="{$logo}" alt="{$mall_name}" /></a>
                     <h6>최저가 필터 전문 쇼핑몰</h6>
                 </div>
-                <div class="w3-display-right w3-hide-small">
+                <div class="w3-display-right">
                     <i class="w3-text-dark-gray"><h3>Big Seal 50%</h3></i>
                     <h6>for a proper look</h6>
                 </div>
@@ -73,28 +100,28 @@
     </header>
     <!-- Navigation -->
     <nav module="Layout_category" class="w3-blue">
-        <ul class="w3-navbar w3-content w3-hide-small w3-border-left w3-border-right w3-border-light-blue">
-            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
-            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
-            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
-            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
-            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
-            <li><a class="w3-padding-large w3-hover-light-blue" href="{$link_product_list}">{$name_or_img_tag}</a></li>
+        <ul class="w3-navbar w3-content">
+            <li><a class="w3-padding-large w3-hover-light-blue" href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
+            <li><a class="w3-padding-large w3-hover-light-blue" href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
+            <li><a class="w3-padding-large w3-hover-light-blue" href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
+            <li><a class="w3-padding-large w3-hover-light-blue" href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
+            <li><a class="w3-padding-large w3-hover-light-blue" href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
+            <li><a class="w3-padding-large w3-hover-light-blue" href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
             <li class=" w3-right"><a class="w3-padding-large w3-hover-light-blue" href="#"><i class="fa fa-search"></i></a></li>
         </ul>
     </nav>
     <!-- Main -->
-    <!-- <aside class="w3-collapse w3-sidenav">좌측 메뉴</aside> 테블릿에선 카테고리 메뉴만 보이고 PC에선 좌측 메뉴만 보인다. -->
     <main class="w3-main">
         <article class="w3-content">
             <!--@contents-->
         </article>
     </main>
     <footer module="Layout_footer" class="w3-container w3-black w3-text-gray">
-        <div class="w3-content w3-padding-jumbo w3-small w3-center">
+        <div class="w3-content w3-padding-16 w3-small w3-center">
             <!-- Util Menu -->
             <div class="w3-container w3-margin">
-                <a href="/">홈</a> | <a href="/shopinfo/company.html">회사소개</a> | <a href="/member/agreement.html">이용약관</a> | <a href="/member/privacy.html">개인정보취급방침</a> | <a href="/shopinfo/guide.html">이용안내</a>
+                <a href="/">홈</a> |
+                <!--<a href="/shopinfo/company.html">회사소개</a> | --><a href="/member/agreement.html">이용약관</a> | <a href="/member/privacy.html">개인정보취급방침</a> | <a href="/shopinfo/guide.html">이용안내</a>
             </div>
 
             <p class="w3-margin-0">
@@ -122,5 +149,9 @@
     </div>
     <!-- //참고 -->
 </body>
+<div module="Layout_conversionPc">
+    <!--@css(/css/module/layout/conversionpc.css)-->
+    <a href="{$mobile_url}"><span>모바일 화면보기</span></a>
+</div>
 
 </html>

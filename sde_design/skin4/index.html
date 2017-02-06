@@ -1,4 +1,4 @@
-<!--@layout(/layout/basic/main.html)-->
+<!--@layout(/layout/basic/layout.html)-->
 
 <!-- Slideshow -->
 <div class="w3-display-container">
@@ -8,8 +8,8 @@
         <div class="w3-btn w3-right" onclick="slideshow.next()">&#10095;</div>
     </div>
     <!-- Images -->
-    <img class="slideshow-item w3-animate-left" style="width: 100%" src="/web/upload/category/editor/2017/02/01/1da4e4c057bb0b9d88e4d70a22872e27.png" alt="" />
-    <img class="slideshow-item w3-animate-left" style="width: 100%" src="/web/upload/category/editor/2017/02/01/abebe2b901b44ba54a0b17950e07ad32.png" alt="" />
+    <div><img class="slideshow-item w3-animate-left" style="width: 100%" src="/web/upload/category/editor/2017/02/01/1da4e4c057bb0b9d88e4d70a22872e27.png" alt="" /></div>
+    <div><img class="slideshow-item w3-animate-left" style="width: 100%" src="/web/upload/category/editor/2017/02/01/abebe2b901b44ba54a0b17950e07ad32.png" alt="" /></div>
     <script>
         var slideshow = w3.slideshow('.slideshow-item', 7000);
     </script>
@@ -30,9 +30,9 @@
         {$category_title_text}
     </header>
     <!-- List -->
-    <div class="w3-section">
+    <div class="w3-section w3-center">
         <!-- List Item -->
-        <div class="w3-hover-opacity w3-padding-small w3-col s6 m3 l3" id="product-list-item">
+        <div class="w3-hover-opacity w3-padding-small w3-col s12 m3 l3" id="product-list-item">
             <a href="{$link_product_detail}"><img class="w3-image" src="{$image_medium}" /></a>
             <footer class="w3-center w3-padding w3-container w3-small">
                 <a href="{$link_product_detail}">
@@ -40,11 +40,11 @@
                 </a>
                 <a href="{$link_product_detail}">
                     <!--<div><span class="w3-tag w3-margin-left w3-red">Hot!</span><span class="w3-tag w3-blue">New!</span></div>-->
-                    <b>{$price_unit_head}{$product_price}{$price_unit_tail}</b>
+                    <b>{$price_unit_head}{$product_price|numberformat}{$price_unit_tail}</b>
                 </a>
             </footer>
         </div>
-        <div class="w3-hover-opacity w3-padding-small w3-col s6 m3 l3" id="product-list-item">
+        <div class="w3-hover-opacity w3-padding-small w3-col s12 m3 l3" id="product-list-item">
             <a href="{$link_product_detail}"><img class="w3-image" src="{$image_medium}" /></a>
             <footer class="w3-center w3-padding w3-container w3-small">
                 <a href="{$link_product_detail}">
@@ -52,7 +52,7 @@
                 </a>
                 <a href="{$link_product_detail}">
                     <!--<div><span class="w3-tag w3-margin-left w3-red">Hot!</span><span class="w3-tag w3-blue">New!</span></div>-->
-                    <b>{$price_unit_head}{$product_price}{$price_unit_tail}</b>
+                    <b>{$price_unit_head}{$product_price|numberformat}{$price_unit_tail}</b>
                 </a>
             </footer>
         </div>
@@ -67,9 +67,9 @@
         {$category_title_text}
     </header>
     <!-- List -->
-    <div class="w3-panel">
+    <div class="w3-section w3-center">
         <!-- List Item -->
-        <div class="w3-hover-opacity w3-padding-small w3-col s6 m3 l3" id="product-list-item">
+        <div class="w3-hover-opacity w3-padding-small w3-col s12 m3 l3" id="product-list-item">
             <a href="{$link_product_detail}"><img class="w3-image" src="{$image_medium}" /></a>
             <footer class="w3-center w3-padding w3-container w3-small">
                 <a href="{$link_product_detail}">
@@ -77,11 +77,11 @@
                 </a>
                 <a href="{$link_product_detail}">
                     <!--<div><span class="w3-tag w3-margin-left w3-red">Hot!</span><span class="w3-tag w3-blue">New!</span></div>-->
-                    <b>{$price_unit_head}{$product_price}{$price_unit_tail}</b>
+                    <b>{$price_unit_head}{$product_price|numberformat}{$price_unit_tail}</b>
                 </a>
             </footer>
         </div>
-        <div class="w3-hover-opacity w3-padding-small w3-col s6 m3 l3" id="product-list-item">
+        <div class="w3-hover-opacity w3-padding-small w3-col s12 m3 l3" id="product-list-item">
             <a href="{$link_product_detail}"><img class="w3-image" src="{$image_medium}" /></a>
             <footer class="w3-center w3-padding w3-container w3-small">
                 <a href="{$link_product_detail}">
@@ -89,7 +89,7 @@
                 </a>
                 <a href="{$link_product_detail}">
                     <!--<div><span class="w3-tag w3-margin-left w3-red">Hot!</span><span class="w3-tag w3-blue">New!</span></div>-->
-                    <b>{$price_unit_head}{$product_price}{$price_unit_tail}</b>
+                    <b>{$price_unit_head}{$product_price|numberformat}{$price_unit_tail}</b>
                 </a>
             </footer>
         </div>
