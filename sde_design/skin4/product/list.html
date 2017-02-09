@@ -17,35 +17,13 @@
         <h2>{$title_text_or_image}</h2>
     </header>
 
-    <ul class="w3-ul">
-        <!-- 참고 : 뉴상품관리 전용 모듈입니다. 뉴상품관리 이외의 곳에서 사용하면 정상동작하지 않습니다. -->
-        <li module="product_displaycategory" style="display:{$display};" class="{$selected}">
-            <a href="{$link_product_list_sub}">{$category_name} <span class="count {$product_count_display|display}">({$product_count})</span></a>
-            <ul module="product_children">
-                <li class="{$selected}">
-                    <a href="{$link_product_list_sub}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a>
-                    <div class="button">
-                        {$children_icon}
-                        <ul module="product_children" class="subCategory">
-                            <li class="{$selected}"><a href="{$link_product_list_sub}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a></li>
-                            <li class="{$selected}"><a href="{$link_product_list_sub}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="{$selected}">
-                    <a href="{$link_product_list_sub}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a>
-                    <div class="button">
-                        {$children_icon}
-                        <ul module="product_children" class="subCategory">
-                            <li class="{$selected}"><a href="{$link_product_list_sub}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a></li>
-                            <li class="{$selected}"><a href="{$link_product_list_sub}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </li>
-        <!-- //참고 -->
-    </ul>
+    <div class="w3-border-bottom ">
+        <ul id="category-second" class="w3-navbar">
+            <li module="product_displaycategory" class=" w3-margin">
+                <a class="{$selected|replace:selected,w3-blue}" href="/product/list.html?{$param_cate_no}">{$category_name} <span class="w3-tiny">({$product_count})</span></a>
+            </li>
+        </ul>
+    </div>
 </div>
 
 
@@ -55,73 +33,85 @@
         <!--
             $compare_page = /product/compare.html
         -->
-
-        <div class="function">
-            <p class="prdCount">등록 제품 : <strong>{$total_count}</strong>개</p>
-            <!-- Order -->
-            <ul module="product_Orderby" class="w3-ul">
-                <li><a href="{$param}" {$style}>{$sort_name}</a></li>
-                <li><a href="{$param}" {$style}>{$sort_name}</a></li>
+        <div class="w3-container w3-border-bottom w3-small">
+            <p class="w3-left">등록 제품 : <strong>{$total_count}</strong>개</p>
+            <!-- Sort Options -->
+            <style>
+                #sorting li {
+                    float: left;
+                    list-style: none;
+                }
+                
+                #sorting li a {
+                    text-decoration: none;
+                }
+                
+                #sorting li+li:before {
+                    content: ' ';
+                    padding: 5px;
+                }
+            </style>
+            <ul id="sorting" module="product_Orderby" class="w3-right">
+                <li><a class="w3-padding-tiny" href="{$param}" {$style}>{$sort_name}</a></li>
+                <li><a class="w3-padding-tiny" href="{$param}" {$style}>{$sort_name}</a></li>
             </ul>
         </div>
     </div>
 
     <!-- Product List -->
-    <div module="product_listnormal" class="ec-base-product">
+    <ul module="product_listnormal" class="w3-ul">
         <!--
-            $count = 2
+            $count = 16
                 ※ 노출시킬 상품의 갯수를 숫자로 설정할 수 있습니다.
                 ※ 상품 노출갯수가 많으면 쇼핑몰에 부하가 발생할 수 있습니다.
             $basket_result = /product/add_basket.html
             $basket_option = /product/basket_option.html
         -->
-        <ul class="w3-ul">
-            <li id="anchorBoxId_{$product_no}">
-                <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
-                <div class="thumbnail">
-                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
-                    </a>
-                    <span class="wish">{$list_wish_icon}</span>
+        <li id="product_{$product_no}">
+            <div class="w3-layout-container w3-padding-small">
+                <div class="w3-layout-cell" style="width:96px">
+                    <a class="w3-small" href="{$link_product_detail}" style="text-decoration: none;">
+                        <img src="{$image_medium}" width="96px" height="96px"></a>
+                    <div class="w3-center">{$zoom_icon}</div>
                 </div>
-                <div class="description">
-                    <div class="icon">
-                        <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$pickup_icon} {$benefit_icons}</div>
-                        <div class="button">
-                            <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon} <strong>{$disp_likeprd_count}</strong></button></div>
-                            <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon}
-                        </div>
+                <div class="w3-layout-cell w3-layout-middle w3-container">
+                    <p class="w3-small">[{$manu_name}] <b class="w3-text-blue">{$product_name}{$product_name_css}</b></p>
+                    <p class="w3-small w3-text-gray">{$summary_desc}</p>
+                </div>
+                <div class="w3-layout-cell w3-layout-middle w3-container" style="width:128px">
+                    <div class="status">
+                        <div class="icon">{$soldout_icon} {$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
                     </div>
-                    <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                    <ul module="product_ListItem" class="w3-ul">
-                        <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                    </ul>
+                    <div class="w3-small">{$delivery}배송비: {$delivery_price}</div>
+                    <div class="w3-text-indigo"><b>{$price_unit_head}{$product_price|numberformat}{$price_unit_tail}</b></div>
+                    <div>{$basket_icon}</div>
                 </div>
-            </li>
-            <li id="anchorBoxId_{$product_no}">
-                <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
-                <div class="thumbnail">
-                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
-                    </a>
-                    <span class="wish">{$list_wish_icon}</span>
+            </div>
+        </li>
+        <li id="product_{$product_no}">
+            <div class="w3-layout-container w3-padding-small">
+                <div class="w3-layout-cell" style="width:96px">
+                    <a class="w3-small" href="{$link_product_detail}" style="text-decoration: none;">
+                        <img src="{$image_medium}" width="96px" height="96px"></a>
+                    <div class="w3-center">{$zoom_icon}</div>
                 </div>
-                <div class="description">
-                    <div class="icon">
-                        <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$pickup_icon} {$benefit_icons}</div>
-                        <div class="button">
-                            <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon} <strong>{$disp_likeprd_count}</strong></button></div>
-                            <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon}
-                        </div>
+                <div class="w3-layout-cell w3-layout-middle w3-container">
+                    <p class="w3-small">[{$manu_name}] <b class="w3-text-blue">{$product_name}{$product_name_css}</b></p>
+                    <p class="w3-small w3-text-gray">{$summary_desc}</p>
+                </div>
+                <div class="w3-layout-cell w3-layout-middle w3-container" style="width:128px">
+                    <div class="status">
+                        <div class="icon">{$soldout_icon} {$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
                     </div>
-                    <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                    <ul module="product_ListItem" class="w3-ul">
-                        <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                    </ul>
+                    <div class="w3-small">{$delivery}배송비: {$delivery_price}</div>
+                    <div class="w3-text-indigo"><b>{$price_unit_head}{$product_price|numberformat}{$price_unit_tail}</b></div>
+                    <div>{$basket_icon}</div>
                 </div>
-            </li>
-        </ul>
-    </div>
+            </div>
+        </li>
+
+
+    </ul>
 </div>
 
 <div module="product_normalpaging" class="w3-center">
