@@ -600,68 +600,61 @@
                     </p>
                 </div>
 
-                <div class="ec-base-table typeList">
-                    <table class="w3-table w3-bordered" summary="" class="{$list_display|display}">
-                        <caption>상품 Q&amp;A</caption>
-                        <colgroup>
-                            <col style="width:70px;" />
-                            <col style="width:134px;" />
-                            <col style="width:auto" />
-                            <col style="width:80px;" />
-                            <col style="width:100px;" />
-                            <col style="width:55px;" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th scope="col">번호</th>
-                                <th scope="col">카테고리</th>
-                                <th scope="col">제목</th>
-                                <th scope="col">작성자</th>
-                                <th scope="col">작성일</th>
-                                <th scope="col">조회</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{$no}</td>
-                                <td>{$category_name}</td>
-                                <td class="subject left txtBreak">{$icon_re}{$icon_lock} <a href="{$link_board_detail}{$param_read}">{$subject}</a> {$icon_new}{$icon_hit}{$icon_file}<span class="txtWarn">{$comment_count}</span></td>
-                                <td>{$member_icon} {$writer}</td>
-                                <td class="txtInfo txt11">{$write_date|date:Y-m-d}</td>
-                                <td class="txtInfo txt11">{$hit_count}</td>
-                            </tr>
-                            <tr>
-                                <td>{$no}</td>
-                                <td>{$category_name}</td>
-                                <td class="subject left txtBreak">{$icon_re}{$icon_lock} <a href="{$link_board_detail}{$param_read}">{$subject}</a> {$icon_new}{$icon_hit}{$icon_file}<span class="txtWarn">{$comment_count}</span></td>
-                                <td>{$member_icon} {$writer}</td>
-                                <td class="txtInfo txt11">{$write_date|date:Y-m-d}</td>
-                                <td class="txtInfo txt11">{$hit_count}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="w3-table w3-bordered w3-small w3-centered {$list_display|display}">
+                    <colgroup>
+                        <col style="width:50px;" />
+                        <col style="width:auto" />
+                        <col style="width:80px;" />
+                        <col style="width:100px;" />
+                        <col style="width:55px;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">번호</th>
+                            <th class="w3-left-align" scope="col">제목</th>
+                            <th scope="col">작성자</th>
+                            <th scope="col">작성일</th>
+                            <th scope="col">조회</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{$no}</td>
+                            <td class="w3-left-align">{$icon_re}{$icon_lock} <a href="{$link_board_detail}{$param_read}">{$subject}</a> {$icon_new}{$icon_hit}{$icon_file}<span class="txtWarn">{$comment_count}</span></td>
+                            <td>{$member_icon} {$writer}</td>
+                            <td>{$write_date|date:Y-m-d}</td>
+                            <td>{$hit_count}</td>
+                        </tr>
+                        <tr>
+                            <td>{$no}</td>
+                            <td class="w3-left-align">{$icon_re}{$icon_lock} <a href="{$link_board_detail}{$param_read}">{$subject}</a> {$icon_new}{$icon_hit}{$icon_file}<span class="txtWarn">{$comment_count}</span></td>
+                            <td>{$member_icon} {$writer}</td>
+                            <td>{$write_date|date:Y-m-d}</td>
+                            <td>{$hit_count}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <p class="ec-base-button typeBorder">
                 <span class="gRight">
-                    <a href="{$qna_write}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/product/btn_board_write2.gif" alt="상품문의하기" /></a>
-                    <a href="{$qna_list}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/product/btn_board_more.gif" alt="모두 보기" /></a>
+                    <a class="w3-btn w3-green w3-right" href="{$qna_write}">문의하기</a>
+                    <a class="w3-btn" href="{$qna_list}">모두 보기</a>
                 </span>
             </p>
 
-            <div module="product_qnapaging" class="ec-base-paginate typeSub">
-                <a href="{$param_first}" class="first"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_first2.gif" alt="첫 페이지" /></a>
-                <a href="{$param_before}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_prev2.gif" alt="이전 페이지" /></a>
-                <ol>
-                    <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-                    <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-                    <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-                    <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-                    <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-                </ol>
-                <a href="{$param_next}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_next2.gif" alt="다음 페이지" /></a>
-                <a href="{$param_last}" class="last"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_last2.gif" alt="마지막 페이지" /></a>
+            <div module="product_qnapaging" class="w3-center">
+                <ul class="w3-pagination">
+                    <li><a href="{$param_first}">&#171;</a></li>
+                    <li><a href="{$param_before}">&#8249;</a></li>
+                    <li><a href="{$param}" class="{$param_class|replace:this,w3-blue}">{$no}</a></li>
+                    <li><a href="{$param}" class="{$param_class|replace:this,w3-blue}">{$no}</a></li>
+                    <li><a href="{$param}" class="{$param_class|replace:this,w3-blue}">{$no}</a></li>
+                    <li><a href="{$param}" class="{$param_class|replace:this,w3-blue}">{$no}</a></li>
+                    <li><a href="{$param}" class="{$param_class|replace:this,w3-blue}">{$no}</a></li>
+                    <li><a href="{$param_next}">&#8250;</a></li>
+                    <li><a href="{$param_last}">&#187;</a></li>
+                </ul>
             </div>
         </div>
     </div>
