@@ -102,7 +102,7 @@
     <header module="board_title_6" class="w3-container w3-xlarge w3-leftbar w3-border-blue ">
         {$board_title}
     </header>
-    <table class="w3-table w3-striped w3-bordered w3-hoverable w3-panel">
+    <table class="w3-table w3-striped w3-bordered w3-hoverable w3-panel w3-small w3-centered">
         <colgroup>
             <col style="width: 70px" />
             <col style="width: auto" />
@@ -122,14 +122,14 @@
                 $subject_cut = 25
                 $main_list_reply_view = no
             -->
-            <tr class="w3-hover-blue">
+            <tr>
                 <td><a href="{$link_board_detail}">{$no}</a></td>
-                <td><a href="{$link_board_detail}">{$subject}</a></td>
+                <td class="w3-left-align"><a href="{$link_board_detail}">{$subject}</a></td>
                 <td>{$write_date|date:Y/m/d}</td>
             </tr>
-            <tr class="w3-hover-blue">
+            <tr>
                 <td><a href="{$link_board_detail}">{$no}</a></td>
-                <td><a href="{$link_board_detail}">{$subject}</a></td>
+                <td class="w3-left-align"><a href="{$link_board_detail}">{$subject}</a></td>
                 <td>{$write_date|date:Y/m/d}</td>
             </tr>
         </tbody>

@@ -1,200 +1,180 @@
 <!--@layout(/layout/basic/layout.html)-->
-<div module="Board_ListPackage_4">
-    <!--@css(/css/module/board/listPackage.css)-->
+<div module="board_writePackage_4">
     <div module="board_title_4">
         <div class="path">
             <span>현재 위치</span>
             <ol>
                 <li><a href="/">홈</a></li>
-                <li><a href="/board/index.html">게시판</a></li>
                 <li title="현재 위치"><strong>{$board_name}</strong></li>
             </ol>
         </div>
 
-        <div class="title">
-            <h2>{$board_title} {$board_adult_icon}</h2>
-            <p>{$board_info}</p>
+        <div class="w3-wide w3-center">
+            <h2>{$board_title}</h2>
         </div>
-        <p class="imgArea">{$board_top_image}</p>
+
+        <p class="w3-opacity w3-center"><i>{$board_info}</i></p>
+
     </div>
 
-    <div class="boardSort">
-        <span module="board_category_4">{$form.board_category}</span>
-        <span module="board_ReplySort_4">{$reply_sort}</span>
-    </div>
+    <div module="board_write_4">
+        <!--
+            $write_success_url = /board/product/list.html
+            $product_select_url = /product/search_board_list.html
+            $order_select_url = /order/search_board_list.html
+            $login_page_url = /member/login.html
+            $deny_access_url = /index.html
+        -->
 
-    <div class="ec-base-table typeList gBorder">
-        <table border="1" summary="">
-        <caption>상품 게시판 목록</caption>
-        <colgroup module="board_listheader_4">
-            <col style="width:70px;" />
-            <col style="width:150px;" />
-            <col style="width:130px;" class="{$config.is_category|display}" />
-            <col style="width:auto;" />
-            <col style="width:84px;" />
-            <col style="width:77px;" class="{$config.use_date|display}" />
-            <col style="width:55px;" class="{$config.use_cnt|display}" />
-            <col style="width:55px;" class="{$config.is_use_recom|display}" />
-            <col style="width:80px;" class="{$config.is_use_point|display}" />
-        </colgroup>
-        <thead module="board_listheader_4">
-            <tr style="{$list_bg_color} {$list_char_color}">
-                <th scope="col">{$checkbox} 번호</th>
-                <th scope="col">상품정보</th>
-                <th scope="col" class="{$config.is_category|display}">카테고리</th>
-                <th scope="col">제목</th>
-                <th scope="col">작성자</th>
-                <th scope="col" class="{$config.use_date|display}">작성일</th>
-                <th scope="col" class="{$config.use_cnt|display}">조회</th>
-                <th scope="col" class="{$config.is_use_recom|display}">추천</th>
-                <th scope="col" class="{$config.is_use_point|display}">평점</th>
-            </tr>
-        </thead>
-        <tbody module="board_notice_4" class="center">
-            <!--
-                $count = 2
-                $product_name_cut = 30
-                $login_page_url = /member/login.html
-                $deny_access_url = /index.html
-            -->
-            <tr style="{$list_bg_color} {$list_char_color}">
-                <td>{$checkbox} {$notice_icon}</td>
-                <td class="thumb left"><a href="{$link_product_detail}">{$product_img}<span>{$product_name}</span></a></td>
-                <td class="{$category_display|display}">{$category_name}</td>
-                <td class="subject left txtBreak">
-                    <span class="{$spread_display|display}">
-                        <a href="#none" onclick="{$action_content_spread}"><img src="//img.echosting.cafe24.com/skin/base/board/btn_unfold.gif" alt="내용 보기" /></a>
-                    </span>
-                    <strong>{$icon_re} <a href="{$link_board_detail}" style="{$link_color}">{$subject}</a> {$icon_lock}{$icon_new}{$icon_hit}{$icon_file}<span class="txtEm">{$comment_count}</span></strong>
-                </td>
-                <td>{$member_icon}{$writer}</td>
-                <td class="{$date_display|display}"><span class="txtNum">{$write_date}</span></td>
-                <td class="{$hit_display|display}"><span class="txtNum">{$hit_count}</span></td>
-                <td class="{$vote_display|display}"><span class="txtNum">{$vote}</span></td>
-                <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/base/board/ico_point{$point_count}.gif" alt="{$point_count}점"></td>
-            </tr>
-            <tr style="{$list_bg_color} {$list_char_color}">
-                <td>{$checkbox} {$notice_icon}</td>
-                <td class="thumb left"><a href="{$link_product_detail}">{$product_img}<span>{$product_name}</span></a></td>
-                <td class="{$category_display|display}">{$category_name}</td>
-                <td class="subject left txtBreak">
-                    <span class="{$spread_display|display}">
-                        <a href="#none" onclick="{$action_content_spread}"><img src="//img.echosting.cafe24.com/skin/base/board/btn_unfold.gif" alt="내용 보기" /></a>
-                    </span>
-                    <strong>{$icon_re} <a href="{$link_board_detail}" style="{$link_color}">{$subject}</a> {$icon_lock}{$icon_new}{$icon_hit}{$icon_file}<span class="txtEm">{$comment_count}</span></strong>
-                </td>
-                <td>{$member_icon}{$writer}</td>
-                <td class="{$date_display|display}"><span class="txtNum">{$write_date}</span></td>
-                <td class="{$hit_display|display}"><span class="txtNum">{$hit_count}</span></td>
-                <td class="{$vote_display|display}"><span class="txtNum">{$vote}</span></td>
-                <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/base/board/ico_point{$point_count}.gif" alt="{$point_count}점"></td>
-            </tr>
-        </tbody>
-        <tbody module="board_fixed_4" class="center">
-            <!--
-                $count = 2
-                $login_page_url = /member/login.html
-                $deny_access_url = /index.html
-            -->
-            <tr style="{$list_bg_color} {$list_char_color}">
-                <td>{$checkbox} {$fixed_icon}</td>
-                <td class="thumb left"><a href="{$link_product_detail}">{$product_img}<span>{$product_name}</span></a></td>
-                <td class="{$category_display|display}">{$category_name}</td>
-                <td class="subject left txtBreak">
-                    <span class="{$spread_display|display}">
-                        <a href="#none" onclick="{$action_content_spread}"><img src="//img.echosting.cafe24.com/skin/base/board/btn_unfold.gif" alt="View Details" /></a>
-                    </span>
-                    <strong>{$icon_re} <a href="{$link_board_detail}" style="{$link_color}">{$subject}</a> {$icon_lock}{$icon_new}{$icon_hit}{$icon_file}<span class="txtEm">{$comment_count}</span></strong>
-                </td>
-                <td>{$member_icon}{$writer}</td>
-                <td class="{$date_display|display}"><span class="txtNum">{$write_date}</span></td>
-                <td class="{$hit_display|display}"><span class="txtNum">{$hit_count}</span></td>
-                <td class="{$vote_display|display}"><span class="txtNum">{$vote}</span></td>
-                <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/base/board/ico_point{$point_count}.gif" alt="{$point_count}점"></td>
-            </tr>
-            <tr style="{$list_bg_color} {$list_char_color}">
-                <td>{$checkbox} {$fixed_icon}</td>
-                <td class="thumb left"><a href="{$link_product_detail}">{$product_img}<span>{$product_name}</span></a></td>
-                <td class="{$category_display|display}">{$category_name}</td>
-                <td class="subject left txtBreak">
-                    <span class="{$spread_display|display}">
-                        <a href="#none" onclick="{$action_content_spread}"><img src="//img.echosting.cafe24.com/skin/base/board/btn_unfold.gif" alt="View Details" /></a>
-                    </span>
-                    <strong>{$icon_re} <a href="{$link_board_detail}" style="{$link_color}">{$subject}</a> {$icon_lock}{$icon_new}{$icon_hit}{$icon_file}<span class="txtEm">{$comment_count}</span></strong>
-                </td>
-                <td>{$member_icon}{$writer}</td>
-                <td class="{$date_display|display}"><span class="txtNum">{$write_date}</span></td>
-                <td class="{$hit_display|display}"><span class="txtNum">{$hit_count}</span></td>
-                <td class="{$vote_display|display}"><span class="txtNum">{$vote}</span></td>
-                <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/base/board/ico_point{$point_count}.gif" alt="{$point_count}점"></td>
-            </tr>
-        </tbody>
-        <tbody module="board_list_4" class="center">
-            <!--
-                $product_name_cut = 30
-                $login_page_url = /member/login.html
-                $deny_access_url = /index.html
-            -->
-            <tr style="{$list_bg_color} {$list_char_color}">
-                <td>{$checkbox} {$no}</td>
-                <td class="thumb left"><a href="{$link_product_detail}">{$product_img}<span>{$product_name}</span></a></td>
-                <td class="{$category_display|display}">{$category_name}</td>
-                <td class="subject left txtBreak">
-                    <span class="{$spread_display|display}">
-                        <a href="#none" onclick="{$action_content_spread}"><img src="//img.echosting.cafe24.com/skin/base/board/btn_unfold.gif" alt="내용 보기" /></a>
-                    </span>
-                    {$icon_re} <a href="{$link_board_detail}" style="{$link_color}">{$subject}</a> {$icon_lock}{$icon_new}{$icon_hit}{$icon_file}<span class="txtEm">{$comment_count}</span>
-                </td>
-                <td>{$member_icon}{$writer}</td>
-                <td class="{$date_display|display}"><span class="txtNum">{$write_date}</span></td>
-                <td class="{$hit_display|display}"><span class="txtNum">{$hit_count}</span></td>
-                <td class="{$vote_display|display}"><span class="txtNum">{$vote}</span></td>
-                <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/base/board/ico_point{$point_count}.gif" alt="{$point_count}점"></td>
-            </tr>
-            <tr style="{$list_bg_color} {$list_char_color}">
-                <td>{$checkbox} {$no}</td>
-                <td class="thumb left"><a href="{$link_product_detail}">{$product_img}<span>{$product_name}</span></a></td>
-                <td class="{$category_display|display}">{$category_name}</td>
-                <td class="subject left txtBreak">
-                    <span class="{$spread_display|display}">
-                        <a href="#none" onclick="{$action_content_spread}"><img src="//img.echosting.cafe24.com/skin/base/board/btn_unfold.gif" alt="내용 보기" /></a>
-                    </span>
-                    {$icon_re} <a href="{$link_board_detail}" style="{$link_color}">{$subject}</a> {$icon_lock}{$icon_new}{$icon_hit}{$icon_file}<span class="txtEm">{$comment_count}</span>
-                </td>
-                <td>{$member_icon}{$writer}</td>
-                <td class="{$date_display|display}"><span class="txtNum">{$write_date}</span></td>
-                <td class="{$hit_display|display}"><span class="txtNum">{$hit_count}</span></td>
-                <td class="{$vote_display|display}"><span class="txtNum">{$vote}</span></td>
-                <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/base/board/ico_point{$point_count}.gif" alt="{$point_count}점"></td>
-            </tr>
-        </tbody>
-        </table>
-        <p class="message {$empty_display|display}" module="board_empty_4">{$empty_message}</p>
+        <!-- 상품정보선택 -->
+        <div class="ec-base-box typeProduct {$display_product|display}">
+            <p class="thumbnail">
+                <a href="{$link_product_detail}"><img id="{$product_img_id}" src="{$url_product_img}" onerror="this.src='//img.echosting.cafe24.com/thumb/75x75.gif'" alt="" /></a>
+            </p>
+            <div class="information">
+                {$product_icon}
+                <h3><a href="/product/detail.html{$param_product}" id="{$product_name_link_id}">{$product_name}</a></h3>
+                <p class="price">{$product_price}</p>
+                <p class="button">
+                    <span id="{$product_view_id}" class="{$display_product_info|display}"><a href="/product/detail.html{$param_product}" id="{$product_link_id}" target="_blank" ><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_prd_detail.gif" alt="상품상세보기" /></a></span>
+                    <span class="{$display_product_select|display}"><a href="#none" onclick="{$action_product_select}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_prd_select.gif" alt="상품정보선택" /></a></span>
+                    <span class="{$display_order_select|display}"><a href="#none" onclick="{$action_order_select}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_prd_order.gif" alt="주문상품선택" /></a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="ec-base-table typeWrite">
+            <table class="w3-table w3-bordered" summary="">
+                <colgroup>
+                    <col style="width:130px;" />
+                    <col style="width:auto;" />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">제목</th>
+                        <td>{$form.board_category} {$form.subject} {$form.notice} {$form.is_post}</td>
+                    </tr>
+                    <tr class="{$config.is_login|display}">
+                        <th scope="row">작성자</th>
+                        <td>{$form.writer}</td>
+                    </tr>
+                    <tr class="{$config.use_write_email|display}">
+                        <th scope="row">이메일</th>
+                        <td>{$form.email}</td>
+                    </tr>
+                    <tr class="{$config.is_use_point|display}">
+                        <th scope="row">평점</th>
+                        <td>{$form.point}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="clear">
+                            {$form.content}
+                        </td>
+                    </tr>
+                    <tr class="ucc">
+                        <th scope="row">UCC URL</th>
+                        <td>{$form.ucc}</td>
+                    </tr>
+                </tbody>
+
+                <tbody class="{$config.use_attach|display}">
+                    <tr>
+                        <th scope="row">첨부파일1</th>
+                        <td>{$form.attach_file}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">첨부파일2</th>
+                        <td>{$form.attach_file}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">첨부파일3</th>
+                        <td>{$form.attach_file}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">첨부파일4</th>
+                        <td>{$form.attach_file}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">첨부파일5</th>
+                        <td>{$form.attach_file}</td>
+                    </tr>
+                </tbody>
+
+                <tbody>
+                    <tr class="{$config.use_password|display}">
+                        <th scope="row">비밀번호</th>
+                        <td>{$form.password}</td>
+                    </tr>
+                    <tr class="{$config.use_secret|display}">
+                        <th scope="row">비밀글설정</th>
+                        <td>{$form.secure}</td>
+                    </tr>
+                    <tr class="captcha {$config.use_captcha_write|display}">
+                        <th scope="row">자동등록방지<br />보안문자</th>
+                        <td>
+                            {$captcha_image} {$captcha_refresh}
+                            <p class="gBlank5">{$form.captcha} <span class="ec-base-help txtInfo">영문, 숫자 조합을 공백없이 입력하세요(대소문자구분)</span></p>
+                        </td>
+                    </tr>
+                    <tr class="agree {$config.is_login|display}">
+                        <th scope="row">개인정보 수집 및 <br />이용 동의</th>
+                        <td>
+                            {$form.privacy_agreement}<br /> 개인정보 수집 및 이용에 동의하십니까? {$form.privacy_agreement_radio}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="w3-container w3-margin w3-center">
+            <span class="{$config.is_admin|display}"><a href="#none" onclick="{$action_comment_admin}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_reply_admin.gif" alt="관리자답변보기" /></a></span>
+            <a class="w3-btn w3-large w3-padding-large w3-blue" href="{$link_board_list}">목록</a>
+            <a class="w3-btn w3-large w3-padding-large w3-green" href="#none" onclick="{$action_write}">등록</a>
+            <a class="w3-btn w3-large w3-padding-large w3-red" href="{$link_board_list}">취소</a>
+        </div>
     </div>
-    <div module="board_ButtonList_4" class="{$write_display|display} ec-base-button typeBG">
-        <span class="gRight">
-            <a href="/board/product/write.html{$param_write}" class="{$write_display|display}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_write.gif" alt="글쓰기" /></a>
-        </span>
-    </div>
+</div> <span class="{$spread_display|display}">
+                        <a href="#none" onclick="{$action_content_spread}"><img src="//img.echosting.cafe24.com/skin/base/board/btn_unfold.gif" alt="내용 보기" /></a>
+                    </span>
+<strong>{$icon_re} <a href="{$link_board_detail}" style="{$link_color}">{$subject}</a> {$icon_lock}{$icon_new}{$icon_hit}{$icon_file}<span class="txtEm">{$comment_count}</span></strong>
+</td>
+<td>{$member_icon}{$writer}</td>
+<td><span class="txtNum">{$write_date}</span></td>
+<td class="{$hit_display|display}"><span class="txtNum">{$hit_count}</span></td>
+</tr>
+</tbody>
+</table>
+<p class="message {$empty_display|display}" module="board_empty_4">{$empty_message}</p>
+
+<div module="board_ButtonList_4" class="w3-section w3-right-align {$write_display|display}">
+    <a href="/board/product/write.html{$param_write}" class="w3-btn {$write_display|display}">글쓰기</a>
 </div>
 
-<div module="board_paging_4" class="ec-base-paginate">
-    <a href="{$param_prev}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_prev.gif" alt="이전 페이지" /></a>
-    <ol>
-        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
-        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
-    </ol>
-    <a href="{$param_next}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_next.gif" alt="다음 페이지" /></a>
+
+<div module="board_paging_4" class="w3-section w3-center" style="clear: both">
+    <ul class="w3-pagination">
+        <li><a href="{$param_before}">&#8249;</a></li>
+        <li><a href="{$param_num}" class="{$param_class|replace:this,w3-blue}">{$page_num}</a></li>
+        <li><a href="{$param_num}" class="{$param_class|replace:this,w3-blue}">{$page_num}</a></li>
+        <li><a href="{$param_num}" class="{$param_class|replace:this,w3-blue}">{$page_num}</a></li>
+        <li><a href="{$param_num}" class="{$param_class|replace:this,w3-blue}">{$page_num}</a></li>
+        <li><a href="{$param_num}" class="{$param_class|replace:this,w3-blue}">{$page_num}</a></li>
+        <li><a href="{$param_next}">&#8250;</a></li>
+    </ul>
+</div>
+</div>
 </div>
 
-<div module="board_search_4">
-    <!--@css(/css/module/board/search.css)-->
+
+<!--<div module="board_search_4">
     <fieldset class="boardSearch">
         <legend>게시물 검색</legend>
         <p class="category {$form.product_category_selector_display|display}">{$form.product_category_selector}</p>
-        <p>{$form.search_date} {$form.search_key} {$form.search} <a href="#none" onclick="{$action_search}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_find.gif" alt="찾기" /></a></p>
+        <p>{$form.search_date} {$form.search_key} {$form.search}
+            <a href="#none" onclick="{$action_search}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_find.gif" alt="찾기" /></a>
+        </p>
     </fieldset>
-</div>
+</div>-->
 
 <!-- 관리자 전용 메뉴 -->
 <div module="board_catemove_4">
