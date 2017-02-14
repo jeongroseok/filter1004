@@ -9,55 +9,34 @@
 
 <section class="w3-section w3-container">
 
-    <header class="w3-container w3-xlarge w3-leftbar w3-border-blue ">
-        내 정보
-    </header>
     <div module="layout_logincheck">
         <!--
             $url = /member/login.html
         -->
     </div>
-    <div module="myshop_orderstate" class="w3-card">
-        <!--@css(/css/module/myshop/orderState.css)-->
-        <header class="w3-container w3-indigo">
-            <h4>주문처리 현황 <span class="w3-small">(최근 <em class="w3-text-light-blue">3개월</em> 기준)</span></h3>
-        </header>
-        <ul class="w3-ul">
-            <li>
-                <strong>입금전</strong>
-                <a href="{$shppiedBeforeUrl}" class="count">{$shppiedBeforeCount}</a>
-            </li>
-            <li>
-                <strong>배송준비중</strong>
-                <a href="{$shppiedStandbyUrl}" class="count">{$shppiedStandbyCount}</a>
-            </li>
-            <li>
-                <strong>배송중</strong>
-                <a href="{$shppiedBeginUrl}" class="count">{$shppiedBeginCount}</a>
-            </li>
-            <li>
-                <strong>배송완료</strong>
-                <a href="{$shppiedComplateUrl}" class="count">{$shppiedComplateCount}</a>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <span class="icoDot"></span>
-                <strong>취소 : </strong>
-                <a href="{$orderCancelUrl}" class="count">{$orderCancelCount}</a>
-            </li>
-            <li>
-                <span class="icoDot"></span>
-                <strong>교환 : </strong>
-                <a href="{$orderExchangeUrl}" class="count">{$orderExchangeCount}</a>
-            </li>
-            <li>
-                <span class="icoDot"></span>
-                <strong>반품 : </strong>
-                <a href="{$orderReturnUrl}" class="count">{$orderReturnCount}</a>
-            </li>
-        </ul>
-    </div>
+    <table module="myshop_orderstate" class="w3-table w3-bordered w3-border w3-centered w3-small">
+        <caption>주문 처리 현황</caption>
+        <thead>
+            <tr class="w3-white">
+                <th>입금전</th>
+                <th>배송준비중</th>
+                <th>배송중</th>
+                <th>배송완료</th>
+                <th>기타</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="{$shppiedBeforeUrl}" class="count">{$shppiedBeforeCount}개</a></td>
+                <td><a href="{$shppiedStandbyUrl}" class="count">{$shppiedStandbyCount}개</a></td>
+                <td><a href="{$shppiedBeginUrl}" class="count">{$shppiedBeginCount}개</a></td>
+                <td><a href="{$shppiedComplateUrl}" class="count">{$shppiedComplateCount}개</a></td>
+                <td><a href="{$orderCancelUrl}" class="count">취소: {$orderCancelCount}개</a>,
+                    <a href="{$orderExchangeUrl}" class="count">교환: {$orderExchangeCount}개</a>,
+                    <a href="{$orderReturnUrl}" class="count">반품: {$orderReturnCount}개</a></td>
+            </tr>
+        </tbody>
+    </table>
 
     <div id="myshopMain" module="myshop_main">
         <!--@css(/css/module/myshop/main.css)-->

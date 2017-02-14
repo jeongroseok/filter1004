@@ -1,21 +1,12 @@
 <!--@layout(/layout/basic/layout.html)-->
 <div module="Board_ListPackage_1002">
-    <!--@css(/css/module/board/listPackage.css)-->
-    <div module="board_title_1002">
-        <div class="path">
-            <span>현재 위치</span>
-            <ol>
-                <li><a href="/">홈</a></li>
-                <li><a href="/board/index.html">게시판</a></li>
-                <li title="현재 위치"><strong>{$board_name}</strong></li>
-            </ol>
-        </div>
-
-        <div class="title">
-            <h2>{$board_title} {$board_adult_icon}</h2>
-            <p>{$board_info}</p>
-        </div>
-        <p class="imgArea">{$board_top_image}</p>
+    <div class="path">
+        <span>현재 위치</span>
+        <ol>
+            <li><a href="/">홈</a></li>
+            <li><a href="/board/index.html">게시판</a></li>
+            <li title="현재 위치"><strong>{$board_name}</strong></li>
+        </ol>
     </div>
 
     <div class="boardSort">
@@ -23,15 +14,15 @@
         <span module="board_ReplySort_1002">{$reply_sort}</span>
     </div>
 
-    <div class="ec-base-table typeList gBorder">
-        <table border="1" summary="">
+    <div class="w3-section">
+        <table class="w3-table w3-bordered w3-border w3-small">
             <caption>게시판 목록</caption>
             <colgroup module="board_listheader_1002">
                 <col style="width:70px;" />
                 <col style="width:135px;" class="{$config.is_category|display}" />
                 <col style="width:auto;" />
                 <col style="width:84px;" />
-                <col style="width:77px;" class="{$config.use_date|display}" />
+                <col style="width:170px;" class="{$config.use_date|display}" />
                 <col style="width:55px;" class="{$config.use_cnt|display}" />
                 <col style="width:55px;" class="{$config.is_use_recom|display}" />
                 <col style="width:80px;" class="{$config.is_use_point|display}" />
@@ -143,27 +134,27 @@
         </table>
         <p class="message {$empty_display|display}" module="board_empty_1002">{$empty_message}</p>
     </div>
-    <div module="board_ButtonList_1002" class="ec-base-button typeBG {$write_display|display}">
-        <span class="gRight">
+    <div module="board_ButtonList_1002" class="w3-section w3-clear {$write_display|display}">
+        <span class="w3-right">
             <a href="/board/free/write.html{$param_write}" class="{$write_display|display}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_write.gif" alt="글쓰기" /></a>
         </span>
     </div>
 </div>
 
-<div module="board_paging_1002" class="ec-base-paginate">
-    <a href="{$param_prev}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_prev.gif" alt="이전 페이지" /></a>
-    <ol>
-        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
-        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
-    </ol>
-    <a href="{$param_next}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_next.gif" alt="다음 페이지" /></a>
+<div module="board_paging_1002" class="w3-center">
+    <ul class="w3-pagination">
+        <li><a href="{$param_prev}">&#8249;</a></li>
+        <li><a href="{$param_num}" class="{$param_class|replace:this,w3-blue}">{$page_num}</a></li>
+        <li><a href="{$param_num}" class="{$param_class|replace:this,w3-blue}">{$page_num}</a></li>
+        <li><a href="{$param_next}">&#8250;</a></li>
+    </ul>
 </div>
 
 <div module="board_search_1002">
-    <!--@css(/css/module/board/search.css)-->
-    <fieldset class="boardSearch">
-        <legend>게시물 검색</legend>
-        <p>{$form.search_date} {$form.search_key} {$form.search} <a href="#none" onclick="{$action_search}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_find.gif" alt="찾기" /></a></p>
+    <fieldset class="w3-container w3-center w3-border-0">
+        <p>{$form.search_date} {$form.search_key} {$form.search}
+            <a href="#none" onclick="{$action_search}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_find.gif" alt="찾기" /></a>
+        </p>
     </fieldset>
 </div>
 

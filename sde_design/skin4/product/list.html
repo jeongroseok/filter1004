@@ -52,8 +52,8 @@
                 }
             </style>
             <ul id="sorting" module="product_Orderby" class="w3-right">
-                <li><a class="w3-padding-tiny" href="{$param}" {$style}>{$sort_name}</a></li>
-                <li><a class="w3-padding-tiny" href="{$param}" {$style}>{$sort_name}</a></li>
+                <li><a class="w3-hover-shadow w3-padding-tiny" href="{$param}" {$style}>{$sort_name}</a></li>
+                <li><a class="w3-hover-shadow w3-padding-tiny" href="{$param}" {$style}>{$sort_name}</a></li>
             </ul>
         </div>
     </div>
@@ -75,29 +75,10 @@
                     <div class="w3-center">{$zoom_icon}</div>
                 </div>
                 <div class="w3-layout-cell w3-layout-middle w3-container">
-                    <p class="w3-small">[{$manu_name}] <b class="w3-text-blue">{$product_name}{$product_name_css}</b></p>
-                    <p class="w3-small w3-text-gray">{$summary_desc}</p>
-                </div>
-                <div class="w3-layout-cell w3-layout-middle w3-container" style="width:128px">
-                    <div class="status">
-                        <div class="icon">{$soldout_icon} {$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
-                    </div>
-                    <div class="w3-small">{$delivery}배송비: {$delivery_price}</div>
-                    <div class="w3-text-indigo"><b>{$price_unit_head}{$product_price|numberformat}{$price_unit_tail}</b></div>
-                    <div>{$basket_icon}</div>
-                </div>
-            </div>
-        </li>
-        <li id="product_{$product_no}">
-            <div class="w3-layout-container w3-padding-small">
-                <div class="w3-layout-cell" style="width:96px">
                     <a class="w3-small" href="{$link_product_detail}" style="text-decoration: none;">
-                        <img src="{$image_medium}" width="96px" height="96px"></a>
-                    <div class="w3-center">{$zoom_icon}</div>
-                </div>
-                <div class="w3-layout-cell w3-layout-middle w3-container">
-                    <p class="w3-small">[{$manu_name}] <b class="w3-text-blue">{$product_name}{$product_name_css}</b></p>
-                    <p class="w3-small w3-text-gray">{$summary_desc}</p>
+                        <p class="w3-small">[{$manu_name}] <b class="w3-text-blue">{$product_name}{$product_name_css}</b></p>
+                        <p class="w3-small w3-text-gray">{$summary_desc}</p>
+                    </a>
                 </div>
                 <div class="w3-layout-cell w3-layout-middle w3-container" style="width:128px">
                     <div class="status">
@@ -110,6 +91,29 @@
             </div>
         </li>
 
+        <li id="product_{$product_no}">
+            <div class="w3-layout-container w3-padding-small">
+                <div class="w3-layout-cell" style="width:96px">
+                    <a class="w3-small" href="{$link_product_detail}" style="text-decoration: none;">
+                        <img src="{$image_medium}" width="96px" height="96px"></a>
+                    <div class="w3-center">{$zoom_icon}</div>
+                </div>
+                <div class="w3-layout-cell w3-layout-middle w3-container">
+                    <a class="w3-small" href="{$link_product_detail}" style="text-decoration: none;">
+                        <p class="w3-small">[{$manu_name}] <b class="w3-text-blue">{$product_name}{$product_name_css}</b></p>
+                        <p class="w3-small w3-text-gray">{$summary_desc}</p>
+                    </a>
+                </div>
+                <div class="w3-layout-cell w3-layout-middle w3-container" style="width:128px">
+                    <div class="status">
+                        <div class="icon">{$soldout_icon} {$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
+                    </div>
+                    <div class="w3-small">{$delivery}배송비: {$delivery_price}</div>
+                    <div class="w3-text-indigo"><b>{$price_unit_head}{$product_price|numberformat}{$price_unit_tail}</b></div>
+                    <div>{$basket_icon}</div>
+                </div>
+            </div>
+        </li>
 
     </ul>
 </div>
